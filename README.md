@@ -8,9 +8,9 @@ This program is suitable for 5-layer architecture.
 Moein Alvandi
 
 # Deployment
-.net core3
-c# languge
-winform Application
+.net core3 -
+c# languge - 
+winform Application -
 
 
 
