@@ -777,7 +777,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "Clean Code Tools - Design By Moein Alvandi - Version1.4";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);

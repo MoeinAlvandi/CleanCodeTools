@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{7828FC35-6BF0-4DD7-B3B1-95DE4B3BA918}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodeTools", "WindowsFormsApp1\CleanCodeTools.csproj", "{7828FC35-6BF0-4DD7-B3B1-95DE4B3BA918}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +21,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7668B536-28A8-44EE-9F08-D5AFDD11EB17}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://dev.azure.com/MoeinAlvandi
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = WindowsFormsApp1\\WindowsFormsApp1.csproj
-		SccProjectName1 = WindowsFormsApp1
-		SccLocalPath1 = WindowsFormsApp1
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,14 @@
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.manifest
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.application
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\obj\Debug\CleanCodeTools.csproj.AssemblyReference.cache
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainForm.resources
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\obj\Debug\CleanCodeTools.csproj.GenerateResource.cache
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\obj\Debug\CleanCodeTools.csproj.CoreCompileInputs.cache
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.manifest
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.application
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Project\CreateSampelsVS\CreateSampelsVS\CleanCodeTools\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
