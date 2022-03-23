@@ -335,7 +335,6 @@ namespace WindowsFormsApp1
 
             txt_IOC_Service.Text = "service.AddScoped<I" + txt_model.Text + "Service, " + txt_model.Text + "Service>();";
             txt_IOC_Repository.Text = "service.AddScoped<I" + txt_model.Text + "Repository, " + txt_model.Text + "Repository>();";
-            MessageBox.Show("Your Code Is Generate", "alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
 
