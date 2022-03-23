@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
             var ProjectRunPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
             string InitFileFullPath = ProjectRunPath + "\\" + DefaultFileName;
 
+
             disableMessages();
             disableCreateBtn();
             ClearAll();
@@ -52,14 +53,14 @@ namespace WindowsFormsApp1
 
 
 
-                string IRepositoryStr = GenerateIRepositoryString(txt_model.Text, txt_id.Text);
+                string IRepositoryStr = GenerateIRepositoryString(txt_model.Text, txt_id.Text,chk_paging.Checked);
                 txt_IRepositry.Text += IRepositoryStr;
 
 
 
 
 
-                string RepositoryStr = GenerateRepositoryString(txt_model.Text, txt_Context.Text, chk_RepositoryTryCatch.Checked, txt_repository_Catch_Code.Text);
+                string RepositoryStr = GenerateRepositoryString(txt_model.Text, txt_Context.Text, chk_RepositoryTryCatch.Checked, txt_repository_Catch_Code.Text,chk_paging.Checked);
                 txt_Repository.Text = RepositoryStr;
 
 
@@ -68,20 +69,21 @@ namespace WindowsFormsApp1
 
 
 
-                txt_IService.Text += GenerateIServiceString(txt_model.Text, txt_id.Text);
+                txt_IService.Text += GenerateIServiceString(txt_model.Text, txt_id.Text,chk_paging.Checked);
 
 
 
 
 
 
-                string ServiceStr = GenerateServiceString(txt_model.Text, chk_ServiceTryCatch.Checked, txt_service_Catch_Code.Text);
+                string ServiceStr = GenerateServiceString(txt_model.Text, chk_ServiceTryCatch.Checked, txt_service_Catch_Code.Text,chk_paging.Checked);
                 txt_Service.Text = ServiceStr;
 
 
                 txt_IOC_Service.Text = "service.AddScoped<I" + txt_model.Text + "Service, " + txt_model.Text + "Service>();";
                 txt_IOC_Repository.Text = "service.AddScoped<I" + txt_model.Text + "Repository, " + txt_model.Text + "Repository>();";
 
+                MessageBox.Show("Your Code Is Generate", "alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
             }
@@ -131,7 +133,7 @@ namespace WindowsFormsApp1
 
         private void btn_Create_IRepository_Click(object sender, EventArgs e)
         {
-            bool result = WriteIntoFiles("I" + txt_model.Text + "Repository.cs", txt_Irepository_FolderPAth.Text, GenerateIRepositoryString(txt_model.Text, txt_id.Text));
+            bool result = WriteIntoFiles("I" + txt_model.Text + "Repository.cs", txt_Irepository_FolderPAth.Text, GenerateIRepositoryString(txt_model.Text, txt_id.Text,chk_paging.Checked));
 
             disableMessages();
             if (result)
@@ -304,14 +306,14 @@ namespace WindowsFormsApp1
 
 
 
-            string IRepositoryStr = GenerateIRepositoryString(txt_model.Text, txt_id.Text);
+            string IRepositoryStr = GenerateIRepositoryString(txt_model.Text, txt_id.Text,chk_paging.Checked);
             txt_IRepositry.Text += IRepositoryStr;
 
 
 
 
 
-            string RepositoryStr = GenerateRepositoryString(txt_model.Text, txt_Context.Text, chk_RepositoryTryCatch.Checked, txt_repository_Catch_Code.Text);
+            string RepositoryStr = GenerateRepositoryString(txt_model.Text, txt_Context.Text, chk_RepositoryTryCatch.Checked, txt_repository_Catch_Code.Text,chk_paging.Checked);
             txt_Repository.Text = RepositoryStr;
 
 
@@ -320,19 +322,21 @@ namespace WindowsFormsApp1
 
 
 
-            txt_IService.Text += GenerateIServiceString(txt_model.Text, txt_id.Text);
+            txt_IService.Text += GenerateIServiceString(txt_model.Text, txt_id.Text,chk_paging.Checked);
 
 
 
 
 
 
-            string ServiceStr = GenerateServiceString(txt_model.Text, chk_ServiceTryCatch.Checked, txt_service_Catch_Code.Text);
+            string ServiceStr = GenerateServiceString(txt_model.Text, chk_ServiceTryCatch.Checked, txt_service_Catch_Code.Text,chk_paging.Checked);
             txt_Service.Text = ServiceStr;
 
 
             txt_IOC_Service.Text = "service.AddScoped<I" + txt_model.Text + "Service, " + txt_model.Text + "Service>();";
             txt_IOC_Repository.Text = "service.AddScoped<I" + txt_model.Text + "Repository, " + txt_model.Text + "Repository>();";
+            MessageBox.Show("Your Code Is Generate", "alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
@@ -340,6 +344,8 @@ namespace WindowsFormsApp1
             ClearAll();
             disableMessages();
             LoadFromINI();
+            MessageBox.Show("Clear!", "alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
 
         private void toolStripLabel3_Click(object sender, EventArgs e)
@@ -356,30 +362,30 @@ namespace WindowsFormsApp1
         {
             if (!string.IsNullOrEmpty(txt_Irepository_FolderPAth.Text))
             {
-                bool result = WriteIntoFiles("I" + txt_model.Text + "Repository.cs", txt_Irepository_FolderPAth.Text, GenerateIRepositoryString(txt_model.Text, txt_id.Text));
+                bool result = WriteIntoFiles("I" + txt_model.Text + "Repository.cs", txt_Irepository_FolderPAth.Text, GenerateIRepositoryString(txt_model.Text, txt_id.Text,chk_paging.Checked));
 
             }
 
             if (!string.IsNullOrEmpty(txt_repository_FolderPAth.Text))
             {
-                bool result = WriteIntoFiles(txt_model.Text + "Repository.cs", txt_repository_FolderPAth.Text, GenerateRepositoryString(txt_model.Text, txt_Context.Text, chk_RepositoryTryCatch.Checked, txt_repository_Catch_Code.Text));
+                bool result = WriteIntoFiles(txt_model.Text + "Repository.cs", txt_repository_FolderPAth.Text, GenerateRepositoryString(txt_model.Text, txt_Context.Text, chk_RepositoryTryCatch.Checked, txt_repository_Catch_Code.Text,chk_paging.Checked));
 
             }
 
             if (!string.IsNullOrEmpty(txt_IserviceFolderPath.Text))
             {
-                bool result = WriteIntoFiles("I" + txt_model.Text + "Service.cs", txt_IserviceFolderPath.Text, GenerateIServiceString(txt_model.Text, txt_id.Text));
+                bool result = WriteIntoFiles("I" + txt_model.Text + "Service.cs", txt_IserviceFolderPath.Text, GenerateIServiceString(txt_model.Text, txt_id.Text,chk_paging.Checked));
 
             }
 
             if (!string.IsNullOrEmpty(txt_service_folderpath.Text))
             {
-                bool result = WriteIntoFiles(txt_model.Text + "Service.cs", txt_service_folderpath.Text, GenerateIServiceString(txt_model.Text, txt_id.Text));
+                bool result = WriteIntoFiles(txt_model.Text + "Service.cs", txt_service_folderpath.Text, GenerateIServiceString(txt_model.Text, txt_id.Text,chk_paging.Checked));
 
             }
 
 
-            MessageBox.Show("All Files Create");
+            MessageBox.Show("All Files Create","alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
 
@@ -483,7 +489,7 @@ namespace WindowsFormsApp1
 
         private void btn_Create_Repository_Click(object sender, EventArgs e)
         {
-            bool result = WriteIntoFiles(txt_model.Text + "Repository.cs", txt_repository_FolderPAth.Text, GenerateRepositoryString(txt_model.Text, txt_Context.Text, chk_RepositoryTryCatch.Checked, txt_repository_Catch_Code.Text));
+            bool result = WriteIntoFiles(txt_model.Text + "Repository.cs", txt_repository_FolderPAth.Text, GenerateRepositoryString(txt_model.Text, txt_Context.Text, chk_RepositoryTryCatch.Checked, txt_repository_Catch_Code.Text,chk_paging.Checked));
 
             disableMessages();
             if (result)
@@ -496,7 +502,7 @@ namespace WindowsFormsApp1
 
         private void btn_Create_IService_Click(object sender, EventArgs e)
         {
-            bool result = WriteIntoFiles("I" + txt_model.Text + "Service.cs", txt_IserviceFolderPath.Text, GenerateIServiceString(txt_model.Text, txt_id.Text));
+            bool result = WriteIntoFiles("I" + txt_model.Text + "Service.cs", txt_IserviceFolderPath.Text, GenerateIServiceString(txt_model.Text, txt_id.Text,chk_paging.Checked));
 
             disableMessages();
             if (result)
@@ -509,7 +515,7 @@ namespace WindowsFormsApp1
 
         private void btn_Create_Service_Click(object sender, EventArgs e)
         {
-            bool result = WriteIntoFiles(txt_model.Text + "Service.cs", txt_service_folderpath.Text, GenerateServiceString(txt_model.Text, chk_RepositoryTryCatch.Checked, txt_repository_Catch_Code.Text));
+            bool result = WriteIntoFiles(txt_model.Text + "Service.cs", txt_service_folderpath.Text, GenerateServiceString(txt_model.Text, chk_RepositoryTryCatch.Checked, txt_repository_Catch_Code.Text,chk_paging.Checked));
 
             disableMessages();
             if (result)
@@ -585,7 +591,7 @@ namespace WindowsFormsApp1
         }
 
 
-        public string GenerateRepositoryString(string ModelName, string ContextName, bool IsTryCatch, string CatchCode)
+        public string GenerateRepositoryString(string ModelName, string ContextName, bool IsTryCatch, string CatchCode,bool IsPaging)
         {
             string result = "";
 
@@ -651,6 +657,27 @@ namespace WindowsFormsApp1
 
                 RepositoryStr += "            }\n}\n\n";
                 #endregion
+
+                if (IsPaging)
+                {
+                    #region GetAllPaging
+                    RepositoryStr += "public IQueryable<" + ModelName + "> GetAll_" + ModelName + "_Paginig(int rowCount, int pageNumber)\n{\n";
+                    RepositoryStr += " IQueryable<"+ ModelName + "> result;\n";
+                    RepositoryStr += "if (rowCount > 0 && pageNumber > 0)\n";
+                    RepositoryStr += "{\n";
+                    RepositoryStr += "int take = rowCount;\n";
+                    RepositoryStr += "int skip = (pageNumber - 1) * rowCount;\n";
+                    RepositoryStr += "result = "+ ContextName.ToLower() + "."+ ModelName + ".Skip(skip).Take(take);\n";
+                    RepositoryStr += "}\n";
+                    RepositoryStr += "else\n";
+                    RepositoryStr += "{\n";
+                    RepositoryStr += "result = " + ContextName.ToLower() + "." + ModelName+";\n";
+                    RepositoryStr += "}\n";
+                    RepositoryStr += "return result; \n}\n\n";
+
+                    #endregion
+                }
+
 
                 #region Get
                 RepositoryStr += "public " + ModelName + " Get" + ModelName + "_ByID(int " + txt_id.Text + ")\n{\n";
@@ -742,6 +769,26 @@ namespace WindowsFormsApp1
 
                 #endregion
 
+                if (IsPaging)
+                {
+                    #region GetAllPaging
+                    RepositoryStr += "public IQueryable<" + ModelName + "> GetAll_" + ModelName + "_Paginig(int rowCount, int pageNumber)\n{\n";
+                    RepositoryStr += " IQueryable<" + ModelName + "> result;\n";
+                    RepositoryStr += "if (rowCount > 0 && pageNumber > 0)\n";
+                    RepositoryStr += "{\n";
+                    RepositoryStr += "int take = rowCount;\n";
+                    RepositoryStr += "int skip = (pageNumber - 1) * rowCount;\n";
+                    RepositoryStr += "result = " + ContextName.ToLower() + "." + ModelName + ".Skip(skip).Take(take);\n";
+                    RepositoryStr += "}\n";
+                    RepositoryStr += "else\n";
+                    RepositoryStr += "{\n";
+                    RepositoryStr += "result = " + ContextName.ToLower() + "." + ModelName + ";\n";
+                    RepositoryStr += "}\n";
+                    RepositoryStr += "return result; \n}\n\n";
+
+                    #endregion
+                }
+
                 #region Get
                 RepositoryStr += "public " + ModelName + " Get" + ModelName + "_ByID(int " + txt_id.Text + ")\n{\n";
                 RepositoryStr += "return " + ContextName.ToLower() + "." + ModelName + "s.Find(" + txt_id.Text + ");\n}\n\n";
@@ -774,7 +821,7 @@ namespace WindowsFormsApp1
 
 
 
-        public string GenerateServiceString(string ModelName, bool IsTryCatch, string CatchCode)
+        public string GenerateServiceString(string ModelName, bool IsTryCatch, string CatchCode,bool IsPaging)
         {
             string result = "";
             if (IsTryCatch)
@@ -862,7 +909,15 @@ namespace WindowsFormsApp1
 
                 ServiceStr += "            }\n}\n\n";
                 #endregion
+                if (IsPaging)
+                {
+                    #region GetAllPaging
+                    ServiceStr += "public List<" + ModelName + "> " + " GetAll_" + ModelName + "_Paging(int rowCount, int pageNumber)\n{\n";
+                    ServiceStr += "List<" + ModelName + "> " + "result = " + ModelName.ToLower() + "Repository.GetAll_" + ModelName + "_Paging(rowCount,pageNumber).ToList();\n";
+                    ServiceStr += "return result;\n}\n\n";
 
+                    #endregion
+                }
                 #region Get
                 ServiceStr += "public " + ModelName + " Get" + ModelName + "_ByID(int " + txt_id.Text + ")\n{\n";
                 ServiceStr += "            try\n{";
@@ -950,6 +1005,16 @@ namespace WindowsFormsApp1
 
                 #endregion
 
+                if(IsPaging)
+                {
+                    #region GetAllPaging
+                    ServiceStr += "public List<" + ModelName + "> " + " GetAll_" + ModelName + "_Paging(int rowCount, int pageNumber)\n{\n";
+                    ServiceStr += "List<" + ModelName + "> " + "result = " + ModelName.ToLower() + "Repository.GetAll_" + ModelName + "_Paging(rowCount,pageNumber).ToList();\n";
+                    ServiceStr += "return result;\n}\n\n";
+
+                    #endregion
+                }
+
                 #region Get
                 ServiceStr += "public " + ModelName + " Get" + ModelName + "_ByID(int " + txt_id.Text + ")\n{\n";
                 ServiceStr += "return " + ModelName.ToLower() + "Repository.Get" + ModelName + "_ByID(" + txt_id.Text + ");\n}\n\n";
@@ -973,7 +1038,7 @@ namespace WindowsFormsApp1
             return result;
         }
 
-        public string GenerateIRepositoryString(string ModelName, string IDName)
+        public string GenerateIRepositoryString(string ModelName, string IDName,bool IsPaging)
         {
             string result = "";
 
@@ -992,15 +1057,15 @@ namespace WindowsFormsApp1
 + "/// injoy :D\n"
 + "/// </summary>\n"
 + "namespace " + namespaceProjectname + "Domain.Interface\n{\n"
-+ "   public interface I" + ModelName + "Repository\n{";
++ "   public interface I" + ModelName + "Repository\n{\n";
 
 
 
             IRepositoryStr += ModelName + " Get" + ModelName + "_ByID(int " + IDName + ");\n";
 
             IRepositoryStr += "List<" + ModelName + "> GetAll_" + ModelName + "();\n";
-
-
+            if(IsPaging)
+                IRepositoryStr += "IQueryable<" + ModelName + "> GetAll_" + ModelName + "_Paginig(int rowCount, int pageNumber);\n";
             IRepositoryStr += "void Insert" + ModelName + "(" + ModelName + " " + ModelName.ToLower() + ");\n";
             IRepositoryStr += "void Update" + ModelName + "(" + ModelName + " " + ModelName.ToLower() + ");\n";
             IRepositoryStr += "void Delete" + ModelName + "(" + ModelName + " " + ModelName.ToLower() + ");\n";
@@ -1011,7 +1076,7 @@ namespace WindowsFormsApp1
             return result;
         }
 
-        public string GenerateIServiceString(string ModelName, string IDName)
+        public string GenerateIServiceString(string ModelName, string IDName,bool IsPaging)
         {
             string result = "";
 
@@ -1019,7 +1084,7 @@ namespace WindowsFormsApp1
             if (!string.IsNullOrEmpty(txt_ProjectName.Text))
                 namespaceProjectname = txt_ProjectName.Text + ".";
 
-            string IRepositoryStr = "using System;\n"
+            string IServiceStr = "using System;\n"
 + "using System.Collections.Generic;\n"
 + "using System.Linq;\n"
 + "using System.Text;\n\n"
@@ -1031,22 +1096,25 @@ namespace WindowsFormsApp1
 + "/// injoy :D\n"
 + "/// </summary>\n"
 + "namespace " + namespaceProjectname + "Core.Interface\n{\n"
-+ "   public interface I" + ModelName + "Service\n{";
++ "   public interface I" + ModelName + "Service\n{\n";
 
 
 
-            IRepositoryStr += ModelName + " Get" + ModelName + "_ByID(int " + IDName + ");\n";
+            IServiceStr += ModelName + " Get" + ModelName + "_ByID(int " + IDName + ");\n";
 
-            IRepositoryStr += "List<" + ModelName + "> GetAll_" + ModelName + "();\n";
-
-
-            IRepositoryStr += "void Insert" + ModelName + "(" + ModelName + " " + ModelName.ToLower() + ");\n";
-            IRepositoryStr += "void Update" + ModelName + "(" + ModelName + " " + ModelName.ToLower() + ");\n";
-            IRepositoryStr += "void Delete" + ModelName + "(" + ModelName + " " + ModelName.ToLower() + ");\n";
-            IRepositoryStr += "void Save();\n}\n}";
+            IServiceStr += "List<" + ModelName + "> GetAll_" + ModelName + "();\n";
 
 
-            result = IRepositoryStr;
+            IServiceStr += "List<" + ModelName + "> GetAll_" + ModelName + "_Paging(int rowCount, int pageNumber);\n";
+
+
+            IServiceStr += "void Insert" + ModelName + "(" + ModelName + " " + ModelName.ToLower() + ");\n";
+            IServiceStr += "void Update" + ModelName + "(" + ModelName + " " + ModelName.ToLower() + ");\n";
+            IServiceStr += "void Delete" + ModelName + "(" + ModelName + " " + ModelName.ToLower() + ");\n";
+            IServiceStr += "void Save();\n}\n}";
+
+
+            result = IServiceStr;
             return result;
         }
 
@@ -1102,12 +1170,15 @@ namespace WindowsFormsApp1
             MyIni2.Write("IServiceFolderPath", "", "FilePath");
             MyIni2.Write("ServiceFolderPath", "", "FilePath");
 
+            MyIni2.Write("ProjectName", "", "ModelInfo");
             MyIni2.Write("Context", "", "ModelInfo");
             MyIni2.Write("Model", "", "ModelInfo");
             MyIni2.Write("ModelID", "", "ModelInfo");
 
             MyIni2.Write("IsRepositoryTryCatch", "false", "TryCatch");
             MyIni2.Write("IsServiceTryCatch", "false", "TryCatch");
+
+            MyIni2.Write("IsPaging", "false", "Paging");
 
         }
 
@@ -1124,6 +1195,7 @@ namespace WindowsFormsApp1
             txt_service_folderpath.Text = MyIni2.Read("ServiceFolderPath", "FilePath");
 
             txt_Context.Text = MyIni2.Read("Context", "ModelInfo");
+            txt_ProjectName.Text = MyIni2.Read("ProjectName", "ModelInfo");
             txt_model.Text = MyIni2.Read("Model", "ModelInfo");
             txt_id.Text = MyIni2.Read("ModelID", "ModelInfo");
 
@@ -1150,6 +1222,15 @@ namespace WindowsFormsApp1
                 chk_ServiceTryCatch.Checked = true;
             }
 
+
+            if (MyIni2.Read("IsPaging", "Paging").Equals("false"))
+            {
+                chk_paging.Checked = false;
+            }
+            else if (MyIni2.Read("IsPaging", "Paging").Equals("true"))
+            {
+                chk_paging.Checked = true;
+            }
             //var HomePage = MyIni2.Read("HomePage");
         }
 
@@ -1180,6 +1261,38 @@ namespace WindowsFormsApp1
             disableMessages();
             lbl_Message_IOC.Text = "IOC.Repository Text Copyed";
             lbl_Message_IOC.Visible = true;
+        }
+
+        private void txt_ProjectName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Context_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_ProjectName_Leave(object sender, EventArgs e)
+        {
+            var MyIni2 = new IniFile(DefaultFileName);
+            MyIni2.Write("ProjectName", txt_ProjectName.Text, "ModelInfo");
+        }
+
+        private void chk_paging_CheckedChanged(object sender, EventArgs e)
+        {
+            var MyIni2 = new IniFile(DefaultFileName);
+            if (chk_paging.Checked)
+            {
+                  MyIni2.Write("IsPaging", "true", "Paging");
+            }
+
+
+            else
+            {
+
+                MyIni2.Write("IsPaging", "false", "Paging");
+            }
         }
     }
 }

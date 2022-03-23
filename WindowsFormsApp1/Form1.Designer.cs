@@ -87,11 +87,13 @@
             this.btn_Copy_IOCService = new System.Windows.Forms.Button();
             this.btn_Copy_IOCRepository = new System.Windows.Forms.Button();
             this.lbl_Message_IOC = new System.Windows.Forms.Label();
+            this.chk_paging = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_model
             // 
+            this.txt_model.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txt_model.Location = new System.Drawing.Point(18, 178);
             this.txt_model.Name = "txt_model";
             this.txt_model.Size = new System.Drawing.Size(375, 20);
@@ -101,6 +103,7 @@
             // 
             // txt_IRepositry
             // 
+            this.txt_IRepositry.BackColor = System.Drawing.Color.MistyRose;
             this.txt_IRepositry.Location = new System.Drawing.Point(440, 48);
             this.txt_IRepositry.Multiline = true;
             this.txt_IRepositry.Name = "txt_IRepositry";
@@ -110,11 +113,13 @@
             // 
             // txt_Context
             // 
+            this.txt_Context.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txt_Context.Location = new System.Drawing.Point(18, 139);
             this.txt_Context.Name = "txt_Context";
             this.txt_Context.Size = new System.Drawing.Size(375, 20);
             this.txt_Context.TabIndex = 3;
             this.txt_Context.Text = "FavaContext";
+            this.txt_Context.TextChanged += new System.EventHandler(this.txt_Context_TextChanged);
             this.txt_Context.Leave += new System.EventHandler(this.txt_Context_Leave);
             // 
             // label1
@@ -146,6 +151,7 @@
             // 
             // txt_Repository
             // 
+            this.txt_Repository.BackColor = System.Drawing.Color.MistyRose;
             this.txt_Repository.Location = new System.Drawing.Point(440, 207);
             this.txt_Repository.Multiline = true;
             this.txt_Repository.Name = "txt_Repository";
@@ -155,6 +161,7 @@
             // 
             // txt_id
             // 
+            this.txt_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.txt_id.Location = new System.Drawing.Point(18, 231);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(375, 20);
@@ -173,6 +180,7 @@
             // 
             // txt_IService
             // 
+            this.txt_IService.BackColor = System.Drawing.Color.MistyRose;
             this.txt_IService.Location = new System.Drawing.Point(440, 405);
             this.txt_IService.Multiline = true;
             this.txt_IService.Name = "txt_IService";
@@ -182,6 +190,7 @@
             // 
             // txt_Service
             // 
+            this.txt_Service.BackColor = System.Drawing.Color.MistyRose;
             this.txt_Service.Location = new System.Drawing.Point(440, 574);
             this.txt_Service.Multiline = true;
             this.txt_Service.Name = "txt_Service";
@@ -191,6 +200,7 @@
             // 
             // txt_IOC_Service
             // 
+            this.txt_IOC_Service.BackColor = System.Drawing.Color.MistyRose;
             this.txt_IOC_Service.Location = new System.Drawing.Point(18, 294);
             this.txt_IOC_Service.Name = "txt_IOC_Service";
             this.txt_IOC_Service.Size = new System.Drawing.Size(375, 20);
@@ -198,6 +208,7 @@
             // 
             // txt_IOC_Repository
             // 
+            this.txt_IOC_Repository.BackColor = System.Drawing.Color.MistyRose;
             this.txt_IOC_Repository.Location = new System.Drawing.Point(18, 333);
             this.txt_IOC_Repository.Name = "txt_IOC_Repository";
             this.txt_IOC_Repository.Size = new System.Drawing.Size(375, 20);
@@ -206,6 +217,7 @@
             // 
             // btn_Create_Repository
             // 
+            this.btn_Create_Repository.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Create_Repository.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Create_Repository.Image = global::WindowsFormsApp1.Properties.Resources.add_plus_button;
             this.btn_Create_Repository.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,11 +227,12 @@
             this.btn_Create_Repository.TabIndex = 20;
             this.btn_Create_Repository.Text = "Create RepositoryFile";
             this.btn_Create_Repository.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Create_Repository.UseVisualStyleBackColor = true;
+            this.btn_Create_Repository.UseVisualStyleBackColor = false;
             this.btn_Create_Repository.Click += new System.EventHandler(this.btn_Create_Repository_Click);
             // 
             // btn_Create_IService
             // 
+            this.btn_Create_IService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Create_IService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Create_IService.Image = global::WindowsFormsApp1.Properties.Resources.add_plus_button;
             this.btn_Create_IService.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -228,11 +241,12 @@
             this.btn_Create_IService.Size = new System.Drawing.Size(134, 23);
             this.btn_Create_IService.TabIndex = 22;
             this.btn_Create_IService.Text = "Create IServiceFile";
-            this.btn_Create_IService.UseVisualStyleBackColor = true;
+            this.btn_Create_IService.UseVisualStyleBackColor = false;
             this.btn_Create_IService.Click += new System.EventHandler(this.btn_Create_IService_Click);
             // 
             // btn_Create_Service
             // 
+            this.btn_Create_Service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Create_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Create_Service.Image = global::WindowsFormsApp1.Properties.Resources.add_plus_button;
             this.btn_Create_Service.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -241,7 +255,7 @@
             this.btn_Create_Service.Size = new System.Drawing.Size(134, 23);
             this.btn_Create_Service.TabIndex = 24;
             this.btn_Create_Service.Text = "Create ServiceFile";
-            this.btn_Create_Service.UseVisualStyleBackColor = true;
+            this.btn_Create_Service.UseVisualStyleBackColor = false;
             this.btn_Create_Service.Click += new System.EventHandler(this.btn_Create_Service_Click);
             // 
             // label8
@@ -274,6 +288,7 @@
             // 
             // txt_Irepository_FolderPAth
             // 
+            this.txt_Irepository_FolderPAth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txt_Irepository_FolderPAth.Location = new System.Drawing.Point(440, 24);
             this.txt_Irepository_FolderPAth.Name = "txt_Irepository_FolderPAth";
             this.txt_Irepository_FolderPAth.Size = new System.Drawing.Size(579, 20);
@@ -292,6 +307,7 @@
             // 
             // txt_repository_FolderPAth
             // 
+            this.txt_repository_FolderPAth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txt_repository_FolderPAth.Location = new System.Drawing.Point(440, 181);
             this.txt_repository_FolderPAth.Name = "txt_repository_FolderPAth";
             this.txt_repository_FolderPAth.Size = new System.Drawing.Size(579, 20);
@@ -310,6 +326,7 @@
             // 
             // txt_IserviceFolderPath
             // 
+            this.txt_IserviceFolderPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txt_IserviceFolderPath.Location = new System.Drawing.Point(440, 379);
             this.txt_IserviceFolderPath.Name = "txt_IserviceFolderPath";
             this.txt_IserviceFolderPath.Size = new System.Drawing.Size(579, 20);
@@ -337,6 +354,7 @@
             // 
             // txt_service_folderpath
             // 
+            this.txt_service_folderpath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txt_service_folderpath.Location = new System.Drawing.Point(440, 548);
             this.txt_service_folderpath.Name = "txt_service_folderpath";
             this.txt_service_folderpath.Size = new System.Drawing.Size(579, 20);
@@ -449,6 +467,7 @@
             // 
             // btn_Copy_Service
             // 
+            this.btn_Copy_Service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_Copy_Service.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Copy_Service.Image = global::WindowsFormsApp1.Properties.Resources.copy_content21;
             this.btn_Copy_Service.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -457,11 +476,12 @@
             this.btn_Copy_Service.Size = new System.Drawing.Size(100, 23);
             this.btn_Copy_Service.TabIndex = 23;
             this.btn_Copy_Service.Text = "Copy";
-            this.btn_Copy_Service.UseVisualStyleBackColor = true;
+            this.btn_Copy_Service.UseVisualStyleBackColor = false;
             this.btn_Copy_Service.Click += new System.EventHandler(this.btn_Copy_Service_Click);
             // 
             // btn_Copy_IService
             // 
+            this.btn_Copy_IService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_Copy_IService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Copy_IService.Image = global::WindowsFormsApp1.Properties.Resources.copy_content21;
             this.btn_Copy_IService.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -470,11 +490,12 @@
             this.btn_Copy_IService.Size = new System.Drawing.Size(100, 23);
             this.btn_Copy_IService.TabIndex = 21;
             this.btn_Copy_IService.Text = "Copy";
-            this.btn_Copy_IService.UseVisualStyleBackColor = true;
+            this.btn_Copy_IService.UseVisualStyleBackColor = false;
             this.btn_Copy_IService.Click += new System.EventHandler(this.btn_Copy_IService_Click);
             // 
             // btn_Copy_Repository
             // 
+            this.btn_Copy_Repository.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_Copy_Repository.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Copy_Repository.Image = global::WindowsFormsApp1.Properties.Resources.copy_content21;
             this.btn_Copy_Repository.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -483,11 +504,12 @@
             this.btn_Copy_Repository.Size = new System.Drawing.Size(100, 23);
             this.btn_Copy_Repository.TabIndex = 19;
             this.btn_Copy_Repository.Text = "Copy";
-            this.btn_Copy_Repository.UseVisualStyleBackColor = true;
+            this.btn_Copy_Repository.UseVisualStyleBackColor = false;
             this.btn_Copy_Repository.Click += new System.EventHandler(this.btn_Copy_Repository_Click);
             // 
             // btn_Create_IRepository
             // 
+            this.btn_Create_IRepository.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Create_IRepository.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Create_IRepository.Image = global::WindowsFormsApp1.Properties.Resources.add_plus_button;
             this.btn_Create_IRepository.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -497,11 +519,12 @@
             this.btn_Create_IRepository.TabIndex = 18;
             this.btn_Create_IRepository.Text = "Create IRepositoryFile";
             this.btn_Create_IRepository.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Create_IRepository.UseVisualStyleBackColor = true;
+            this.btn_Create_IRepository.UseVisualStyleBackColor = false;
             this.btn_Create_IRepository.Click += new System.EventHandler(this.btn_Create_IRepository_Click);
             // 
             // btn_copy_IRepository
             // 
+            this.btn_copy_IRepository.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_copy_IRepository.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_copy_IRepository.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_copy_IRepository.Image = global::WindowsFormsApp1.Properties.Resources.copy_content21;
@@ -511,7 +534,7 @@
             this.btn_copy_IRepository.Size = new System.Drawing.Size(100, 23);
             this.btn_copy_IRepository.TabIndex = 17;
             this.btn_copy_IRepository.Text = "Copy";
-            this.btn_copy_IRepository.UseVisualStyleBackColor = true;
+            this.btn_copy_IRepository.UseVisualStyleBackColor = false;
             this.btn_copy_IRepository.Click += new System.EventHandler(this.btn_copy_IRepository_Click);
             // 
             // chk_RepositoryTryCatch
@@ -527,6 +550,7 @@
             // 
             // txt_repository_Catch_Code
             // 
+            this.txt_repository_Catch_Code.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txt_repository_Catch_Code.Enabled = false;
             this.txt_repository_Catch_Code.Location = new System.Drawing.Point(12, 473);
             this.txt_repository_Catch_Code.Multiline = true;
@@ -555,6 +579,7 @@
             // 
             // txt_service_Catch_Code
             // 
+            this.txt_service_Catch_Code.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txt_service_Catch_Code.Enabled = false;
             this.txt_service_Catch_Code.Location = new System.Drawing.Point(12, 612);
             this.txt_service_Catch_Code.Multiline = true;
@@ -585,10 +610,13 @@
             // 
             // txt_ProjectName
             // 
+            this.txt_ProjectName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.txt_ProjectName.Location = new System.Drawing.Point(15, 71);
             this.txt_ProjectName.Name = "txt_ProjectName";
             this.txt_ProjectName.Size = new System.Drawing.Size(375, 20);
             this.txt_ProjectName.TabIndex = 53;
+            this.txt_ProjectName.TextChanged += new System.EventHandler(this.txt_ProjectName_TextChanged);
+            this.txt_ProjectName.Leave += new System.EventHandler(this.txt_ProjectName_Leave);
             // 
             // label13
             // 
@@ -602,6 +630,7 @@
             // 
             // btn_Copy_IOCService
             // 
+            this.btn_Copy_IOCService.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_Copy_IOCService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Copy_IOCService.Image = global::WindowsFormsApp1.Properties.Resources.copy_content21;
             this.btn_Copy_IOCService.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -609,11 +638,12 @@
             this.btn_Copy_IOCService.Name = "btn_Copy_IOCService";
             this.btn_Copy_IOCService.Size = new System.Drawing.Size(23, 23);
             this.btn_Copy_IOCService.TabIndex = 56;
-            this.btn_Copy_IOCService.UseVisualStyleBackColor = true;
+            this.btn_Copy_IOCService.UseVisualStyleBackColor = false;
             this.btn_Copy_IOCService.Click += new System.EventHandler(this.btn_Copy_IOCService_Click);
             // 
             // btn_Copy_IOCRepository
             // 
+            this.btn_Copy_IOCRepository.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_Copy_IOCRepository.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Copy_IOCRepository.Image = global::WindowsFormsApp1.Properties.Resources.copy_content21;
             this.btn_Copy_IOCRepository.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -621,7 +651,7 @@
             this.btn_Copy_IOCRepository.Name = "btn_Copy_IOCRepository";
             this.btn_Copy_IOCRepository.Size = new System.Drawing.Size(23, 23);
             this.btn_Copy_IOCRepository.TabIndex = 57;
-            this.btn_Copy_IOCRepository.UseVisualStyleBackColor = true;
+            this.btn_Copy_IOCRepository.UseVisualStyleBackColor = false;
             this.btn_Copy_IOCRepository.Click += new System.EventHandler(this.btn_Copy_IOCRepository_Click);
             // 
             // lbl_Message_IOC
@@ -634,11 +664,24 @@
             this.lbl_Message_IOC.TabIndex = 58;
             this.lbl_Message_IOC.Text = "Message";
             // 
+            // chk_paging
+            // 
+            this.chk_paging.AutoSize = true;
+            this.chk_paging.Location = new System.Drawing.Point(18, 403);
+            this.chk_paging.Name = "chk_paging";
+            this.chk_paging.Size = new System.Drawing.Size(59, 17);
+            this.chk_paging.TabIndex = 59;
+            this.chk_paging.Text = "Paging";
+            this.chk_paging.UseVisualStyleBackColor = true;
+            this.chk_paging.CheckedChanged += new System.EventHandler(this.chk_paging_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1070, 720);
+            this.Controls.Add(this.chk_paging);
             this.Controls.Add(this.lbl_Message_IOC);
             this.Controls.Add(this.btn_Copy_IOCRepository);
             this.Controls.Add(this.btn_Copy_IOCService);
@@ -764,6 +807,7 @@
         private System.Windows.Forms.Button btn_Copy_IOCService;
         private System.Windows.Forms.Button btn_Copy_IOCRepository;
         private System.Windows.Forms.Label lbl_Message_IOC;
+        private System.Windows.Forms.CheckBox chk_paging;
     }
 }
 
