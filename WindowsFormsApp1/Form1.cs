@@ -1293,5 +1293,10 @@ namespace WindowsFormsApp1
                 MyIni2.Write("IsPaging", "false", "Paging");
             }
         }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

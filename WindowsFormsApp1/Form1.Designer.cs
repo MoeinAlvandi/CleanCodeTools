@@ -88,6 +88,9 @@
             this.btn_Copy_IOCRepository = new System.Windows.Forms.Button();
             this.lbl_Message_IOC = new System.Windows.Forms.Label();
             this.chk_paging = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -675,12 +678,47 @@
             this.chk_paging.UseVisualStyleBackColor = true;
             this.chk_paging.CheckedChanged += new System.EventHandler(this.chk_paging_CheckedChanged);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(87, 213);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(15, 20);
+            this.label14.TabIndex = 60;
+            this.label14.Text = "*";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(51, 162);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(14, 16);
+            this.label15.TabIndex = 61;
+            this.label15.Text = "*";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(59, 123);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(14, 16);
+            this.label16.TabIndex = 62;
+            this.label16.Text = "*";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1070, 720);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.chk_paging);
             this.Controls.Add(this.lbl_Message_IOC);
             this.Controls.Add(this.btn_Copy_IOCRepository);
@@ -733,6 +771,8 @@
             this.Controls.Add(this.txt_IRepositry);
             this.Controls.Add(this.txt_model);
             this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -808,6 +848,9 @@
         private System.Windows.Forms.Button btn_Copy_IOCRepository;
         private System.Windows.Forms.Label lbl_Message_IOC;
         private System.Windows.Forms.CheckBox chk_paging;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }
 
