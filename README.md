@@ -9,7 +9,7 @@ Moein Alvandi
 
 # Deployment
 .net core3 -
-c# languge - 
+c# language - 
 winform Application -
 
 
